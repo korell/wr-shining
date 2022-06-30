@@ -1,0 +1,9 @@
+{
+  "host": "https://myhost.dev",
+  "browsersync": {
+    "https": {
+      "key": "~/ca/certificat.key",
+      "cert": "~/ca/certificat.crt"
+    }
+  }
+}

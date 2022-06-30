@@ -1,0 +1,23 @@
+@import "helpers/helpers";
+@import "base/base";
+
+.Wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('../img/commons/shining-pattern.jpg');
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.Content {
+    &-name {
+        text-align: center;
+        font-size: 6vw;
+    }
+}
+
