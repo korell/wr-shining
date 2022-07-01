@@ -5,23 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WR Shining Team</title>
+    <title>The Shining Ax</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="./assets/build/css/screen.css">
+    <link rel="stylesheet" href="./assets/build/css/screen.css?v=3">
 </head>
 <body>
 <div class="Wrapper">
     <div class="Wrapper-axe">
-        <img src="./assets/build/img/commons/shining-axe.png" alt="">
+        <img id="axe" src="./assets/build/img/commons/shining-axe.png" alt="">
     </div>
     <div class="Wrapper-pattern"></div>
     <div class="Player">
-        <video id="player" data-yt2html5="https://www.youtube.com/watch?v=fLEdpDpoTTA"></video>
+        <img class="full-image" id="eric" src="./assets/build/img/commons/door-eric.jpg" alt="">
+        <img class="full-image" id="matthieu" src="./assets/build/img/commons/door-matthieu.jpg" alt="">
+        <img class="full-image" id="overlook" src="./assets/build/img/commons/overlook.jpg" alt="">
+        <video muted id="player" data-yt2html5="https://www.youtube.com/watch?v=fLEdpDpoTTA"></video>
     </div>
     <div class="Content">
-        <h1 class="Content-name">The Shining Ax</h1>
+        <h1 class="Content-name"><span>The</span> Shining Ax</h1>
+        <button class="Content-trigger" id="trigger">Qui sera le vainqueur ?</button>
     </div>
 </div>
-<script src="./assets/build/js/main.js"></script>
+<script src="./assets/build/js/main.js?v=3"></script>
 </body>
 </html>

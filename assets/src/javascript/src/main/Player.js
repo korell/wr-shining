@@ -7,22 +7,13 @@ export class Player {
         this.video = video
         this.video.style.display = 'none'
         this.isInit = false
-        this.video.addEventListener('canplay', () => {
-            // if(!this.isInit) {
-            //     this.isInit = true
-            //     this.playVideo()
-            // }
-        })
+        this.video.addEventListener('canplay', () => {})
         this.video.addEventListener('pause', (ev) => {
             this.video.style.display = 'none'
             this.isPlaying = false
         })
         this.video.addEventListener('ended', (ev) => {
             this.isPlaying = false
-        })
-
-        document.body.addEventListener('click', () => {
-            this.playVideo()
         })
 
         this.isPlaying = false
