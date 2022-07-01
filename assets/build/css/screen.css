@@ -156,25 +156,28 @@ body {
           align-items: center;
 }
 .Content-name {
+  position: relative;
+  z-index: 1;
   text-align: center;
   font-size: 8vw;
   -webkit-animation: vibes 7s steps(1) infinite;
           animation: vibes 7s steps(1) infinite;
 }
-.Content-name span {
-  font-size: 6vw;
+.Content-name img {
   display: block;
-  margin-bottom: 0.3em;
+  max-width: 70vw;
 }
 .Content-trigger {
+  position: relative;
+  z-index: 2;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background-color: #e25716;
   border: 10px solid #a62329;
-  font-size: 3vw;
+  font-size: clamp(0px, 3vw, 30px);
   font-family: "Nosifer", cursive;
-  padding: 20px;
+  padding: 1em;
   margin-top: 50px;
   cursor: pointer;
 }
@@ -212,6 +215,9 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   visibility: hidden;
+  pointer-events: all;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
 }
 .Player .full-image.visible {
   visibility: visible;

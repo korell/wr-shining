@@ -52,11 +52,9 @@ btnAction.addEventListener('click', ev => {
     } else {
         currentImage = document.getElementById(key)
         currentImage.classList.add('visible')
-        setTimeout(() => {
-            if(currentImage) {
-                currentImage.classList.remove('visible')
-            }
+        currentImage.addEventListener('click', () => {
+            currentImage.classList.remove('visible')
             content.style.visibility = null
-        }, 3000)
+        })
     }
 })

@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ \"../core-js/modules/es.array.concat.js\");\n/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ \"../core-js/modules/es.array.splice.js\");\n/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.timers.js */ \"../core-js/modules/web.timers.js\");\n/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _main_Player__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main/Player */ \"../../src/javascript/src/main/Player.js\");\n\n\n\n\nvar playerContainer = document.getElementById('player');\nvar player = new _main_Player__WEBPACK_IMPORTED_MODULE_3__[\"Player\"](playerContainer);\nvar axe = document.getElementById('axe');\nvar content = document.querySelector('.Content');\nvar hoverAxe = false;\nvar btnAction = document.getElementById('trigger');\ndocument.addEventListener('pointermove', function (ev) {\n  var axeCoords = axe.getBoundingClientRect();\n\n  if (ev.clientX > axeCoords.left && ev.clientX < axeCoords.right && ev.clientY > axeCoords.top && ev.clientY < axeCoords.bottom) {\n    if (!hoverAxe) {\n      hoverAxe = true; //player.playVideo()\n    }\n  } else {\n    hoverAxe = false;\n  }\n});\ndocument.body.addEventListener('click', function () {\n  player.video.muted = false;\n});\nvar images = ['eric', 'matthieu', 'jack', 'overlook'];\nvar availableImages = [].concat(images);\nvar currentImage = null;\nbtnAction.addEventListener('click', function (ev) {\n  ev.preventDefault();\n  content.style.visibility = 'hidden';\n\n  if (currentImage) {\n    currentImage.classList.remove('visible');\n  }\n\n  currentImage = null;\n  var index = Math.min(availableImages.length - 1, Math.floor(Math.random() * availableImages.length)),\n      key = availableImages[index];\n  availableImages.splice(index, 1);\n\n  if (availableImages.length === 0) {\n    availableImages = [].concat(images);\n  }\n\n  if (key === 'jack') {\n    player.video.addEventListener('pause', function (ev) {\n      content.style.visibility = null;\n    });\n    player.playVideo();\n  } else {\n    currentImage = document.getElementById(key);\n    currentImage.classList.add('visible');\n    setTimeout(function () {\n      if (currentImage) {\n        currentImage.classList.remove('visible');\n      }\n\n      content.style.visibility = null;\n    }, 3000);\n  }\n});\n\n//# sourceURL=webpack:////Users/mrebillard/Sites/wr-shining/assets/src/javascript/src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ \"../core-js/modules/es.array.concat.js\");\n/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ \"../core-js/modules/es.array.splice.js\");\n/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _main_Player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main/Player */ \"../../src/javascript/src/main/Player.js\");\n\n\n\nvar playerContainer = document.getElementById('player');\nvar player = new _main_Player__WEBPACK_IMPORTED_MODULE_2__[\"Player\"](playerContainer);\nvar axe = document.getElementById('axe');\nvar content = document.querySelector('.Content');\nvar hoverAxe = false;\nvar btnAction = document.getElementById('trigger');\ndocument.addEventListener('pointermove', function (ev) {\n  var axeCoords = axe.getBoundingClientRect();\n\n  if (ev.clientX > axeCoords.left && ev.clientX < axeCoords.right && ev.clientY > axeCoords.top && ev.clientY < axeCoords.bottom) {\n    if (!hoverAxe) {\n      hoverAxe = true; //player.playVideo()\n    }\n  } else {\n    hoverAxe = false;\n  }\n});\ndocument.body.addEventListener('click', function () {\n  player.video.muted = false;\n});\nvar images = ['eric', 'matthieu', 'jack', 'overlook'];\nvar availableImages = [].concat(images);\nvar currentImage = null;\nbtnAction.addEventListener('click', function (ev) {\n  ev.preventDefault();\n  content.style.visibility = 'hidden';\n\n  if (currentImage) {\n    currentImage.classList.remove('visible');\n  }\n\n  currentImage = null;\n  var index = Math.min(availableImages.length - 1, Math.floor(Math.random() * availableImages.length)),\n      key = availableImages[index];\n  availableImages.splice(index, 1);\n\n  if (availableImages.length === 0) {\n    availableImages = [].concat(images);\n  }\n\n  if (key === 'jack') {\n    player.video.addEventListener('pause', function (ev) {\n      content.style.visibility = null;\n    });\n    player.playVideo();\n  } else {\n    currentImage = document.getElementById(key);\n    currentImage.classList.add('visible');\n    currentImage.addEventListener('click', function () {\n      currentImage.classList.remove('visible');\n      content.style.visibility = null;\n    });\n  }\n});\n\n//# sourceURL=webpack:////Users/mrebillard/Sites/wr-shining/assets/src/javascript/src/main.js?");
 
 /***/ }),
 
@@ -385,17 +385,6 @@ eval("var global = __webpack_require__(/*! ../internals/global */ \"../core-js/i
 /***/ (function(module, exports) {
 
 eval("module.exports = function (exec) {\n  try {\n    return !!exec();\n  } catch (error) {\n    return true;\n  }\n};\n\n\n//# sourceURL=webpack:///../core-js/internals/fails.js?");
-
-/***/ }),
-
-/***/ "../core-js/internals/function-apply.js":
-/*!**********************************************!*\
-  !*** ../core-js/internals/function-apply.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var NATIVE_BIND = __webpack_require__(/*! ../internals/function-bind-native */ \"../core-js/internals/function-bind-native.js\");\n\nvar FunctionPrototype = Function.prototype;\nvar apply = FunctionPrototype.apply;\nvar call = FunctionPrototype.call;\n\n// eslint-disable-next-line es-x/no-reflect -- safe\nmodule.exports = typeof Reflect == 'object' && Reflect.apply || (NATIVE_BIND ? call.bind(apply) : function () {\n  return call.apply(apply, arguments);\n});\n\n\n//# sourceURL=webpack:///../core-js/internals/function-apply.js?");
 
 /***/ }),
 
@@ -797,17 +786,6 @@ eval("var $TypeError = TypeError;\n\n// `RequireObjectCoercible` abstract operat
 
 /***/ }),
 
-/***/ "../core-js/internals/schedulers-fix.js":
-/*!**********************************************!*\
-  !*** ../core-js/internals/schedulers-fix.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var global = __webpack_require__(/*! ../internals/global */ \"../core-js/internals/global.js\");\nvar apply = __webpack_require__(/*! ../internals/function-apply */ \"../core-js/internals/function-apply.js\");\nvar isCallable = __webpack_require__(/*! ../internals/is-callable */ \"../core-js/internals/is-callable.js\");\nvar userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ \"../core-js/internals/engine-user-agent.js\");\nvar arraySlice = __webpack_require__(/*! ../internals/array-slice */ \"../core-js/internals/array-slice.js\");\nvar validateArgumentsLength = __webpack_require__(/*! ../internals/validate-arguments-length */ \"../core-js/internals/validate-arguments-length.js\");\n\nvar MSIE = /MSIE .\\./.test(userAgent); // <- dirty ie9- check\nvar Function = global.Function;\n\nvar wrap = function (scheduler) {\n  return MSIE ? function (handler, timeout /* , ...arguments */) {\n    var boundArgs = validateArgumentsLength(arguments.length, 1) > 2;\n    var fn = isCallable(handler) ? handler : Function(handler);\n    var args = boundArgs ? arraySlice(arguments, 2) : undefined;\n    return scheduler(boundArgs ? function () {\n      apply(fn, this, args);\n    } : fn, timeout);\n  } : scheduler;\n};\n\n// ie9- setTimeout & setInterval additional parameters fix\n// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers\nmodule.exports = {\n  // `setTimeout` method\n  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout\n  setTimeout: wrap(global.setTimeout),\n  // `setInterval` method\n  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval\n  setInterval: wrap(global.setInterval)\n};\n\n\n//# sourceURL=webpack:///../core-js/internals/schedulers-fix.js?");
-
-/***/ }),
-
 /***/ "../core-js/internals/shared-key.js":
 /*!******************************************!*\
   !*** ../core-js/internals/shared-key.js ***!
@@ -973,17 +951,6 @@ eval("var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ \"..
 
 /***/ }),
 
-/***/ "../core-js/internals/validate-arguments-length.js":
-/*!*********************************************************!*\
-  !*** ../core-js/internals/validate-arguments-length.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var $TypeError = TypeError;\n\nmodule.exports = function (passed, required) {\n  if (passed < required) throw $TypeError('Not enough arguments');\n  return passed;\n};\n\n\n//# sourceURL=webpack:///../core-js/internals/validate-arguments-length.js?");
-
-/***/ }),
-
 /***/ "../core-js/internals/well-known-symbol.js":
 /*!*************************************************!*\
   !*** ../core-js/internals/well-known-symbol.js ***!
@@ -1038,39 +1005,6 @@ eval("// TODO: Remove from `core-js@4`\nvar $ = __webpack_require__(/*! ../inter
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("var $ = __webpack_require__(/*! ../internals/export */ \"../core-js/internals/export.js\");\nvar DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ \"../core-js/internals/descriptors.js\");\nvar defineProperty = __webpack_require__(/*! ../internals/object-define-property */ \"../core-js/internals/object-define-property.js\").f;\n\n// `Object.defineProperty` method\n// https://tc39.es/ecma262/#sec-object.defineproperty\n// eslint-disable-next-line es-x/no-object-defineproperty -- safe\n$({ target: 'Object', stat: true, forced: Object.defineProperty !== defineProperty, sham: !DESCRIPTORS }, {\n  defineProperty: defineProperty\n});\n\n\n//# sourceURL=webpack:///../core-js/modules/es.object.define-property.js?");
-
-/***/ }),
-
-/***/ "../core-js/modules/web.set-interval.js":
-/*!**********************************************!*\
-  !*** ../core-js/modules/web.set-interval.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var $ = __webpack_require__(/*! ../internals/export */ \"../core-js/internals/export.js\");\nvar global = __webpack_require__(/*! ../internals/global */ \"../core-js/internals/global.js\");\nvar setInterval = __webpack_require__(/*! ../internals/schedulers-fix */ \"../core-js/internals/schedulers-fix.js\").setInterval;\n\n// ie9- setInterval additional parameters fix\n// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval\n$({ global: true, bind: true, forced: global.setInterval !== setInterval }, {\n  setInterval: setInterval\n});\n\n\n//# sourceURL=webpack:///../core-js/modules/web.set-interval.js?");
-
-/***/ }),
-
-/***/ "../core-js/modules/web.set-timeout.js":
-/*!*********************************************!*\
-  !*** ../core-js/modules/web.set-timeout.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var $ = __webpack_require__(/*! ../internals/export */ \"../core-js/internals/export.js\");\nvar global = __webpack_require__(/*! ../internals/global */ \"../core-js/internals/global.js\");\nvar setTimeout = __webpack_require__(/*! ../internals/schedulers-fix */ \"../core-js/internals/schedulers-fix.js\").setTimeout;\n\n// ie9- setTimeout additional parameters fix\n// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout\n$({ global: true, bind: true, forced: global.setTimeout !== setTimeout }, {\n  setTimeout: setTimeout\n});\n\n\n//# sourceURL=webpack:///../core-js/modules/web.set-timeout.js?");
-
-/***/ }),
-
-/***/ "../core-js/modules/web.timers.js":
-/*!****************************************!*\
-  !*** ../core-js/modules/web.timers.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// TODO: Remove this module from `core-js@4` since it's split to modules listed below\n__webpack_require__(/*! ../modules/web.set-interval */ \"../core-js/modules/web.set-interval.js\");\n__webpack_require__(/*! ../modules/web.set-timeout */ \"../core-js/modules/web.set-timeout.js\");\n\n\n//# sourceURL=webpack:///../core-js/modules/web.timers.js?");
 
 /***/ }),
 
