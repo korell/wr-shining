@@ -45,7 +45,7 @@ btnAction.addEventListener('click', ev => {
     }
 
     if(key === 'jack') {
-        player.video.addEventListener('pause', (ev) => {
+        player.video.addEventListener('ended', (ev) => {
             content.style.visibility = null
         })
         player.playVideo()

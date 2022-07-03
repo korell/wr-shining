@@ -7,12 +7,8 @@ export class Player {
         this.video = video
         this.video.style.display = 'none'
         this.isInit = false
-        this.video.addEventListener('canplay', () => {})
-        this.video.addEventListener('pause', (ev) => {
-            this.video.style.display = 'none'
-            this.isPlaying = false
-        })
         this.video.addEventListener('ended', (ev) => {
+            this.video.style.display = 'none'
             this.isPlaying = false
         })
 
@@ -40,11 +36,11 @@ export class Player {
 
     playVideo() {
         if(!this.isPlaying) {
-            this.video.currentTime = 0.1
-            this.video.play()
+            this.video.currentTime = 0
             this.video.style.display = 'block'
+            this.video.play()
             this.isPlaying = true
-            this.getProgress()
+            //this.getProgress()
         }
     }
 }
