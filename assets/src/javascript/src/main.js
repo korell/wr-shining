@@ -26,7 +26,7 @@ document.body.addEventListener('click', () => {
 })
 
 const images = [
-    'eric', 'matthieu', 'jack', 'overlook'
+    'eric', 'girls', 'matthieu', 'jack', 'overlook'
 ]
 let availableImages = [...images]
 let currentImage = null
